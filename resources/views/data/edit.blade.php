@@ -20,19 +20,19 @@
    {{csrf_field()}}
    <input type="hidden" name="_method" value="PATCH" />
    <div class="form-group">
-    <input type="text" name="judul" class="form-control" value="{{$student->judul}}" placeholder="Enter First Name" />
+    <input type="text" name="judul" class="form-control" value="{{$data->judul}}" placeholder="Judul Buku" />
    </div>
    <div class="form-group">
-    <input type="text" name="pengarang" class="form-control" value="{{$student->pengarang}}" placeholder="Enter Last Name" />
+    <input type="text" name="pengarang" class="form-control" value="{{$data->pengarang}}" placeholder="Pengarang Buku" />
    </div>
    <div class="form-group">
-    <input type="text" name="kategori" class="form-control" value="{{$student->kategori}}" placeholder="Enter First Name" />
+    <input type="text" name="kategori" class="form-control" value="{{$data->kategori}}" placeholder="Kategori Buku" />
    </div>
    <div class="form-group">
-    <input type="text" name="tahunTerbit" class="form-control" value="{{$student->tahunTerbit}}" placeholder="Enter Last Name" />
+    <input type="text" name="tahunTerbit" class="form-control" value="{{$data->tahunTerbit}}" placeholder="Tahun Terbit Buku" />
    </div>
    <div class="form-group">
-    <input type="text" name="penerbit" class="form-control" value="{{$student->penerbit}}" placeholder="Enter Last Name" />
+    <input type="text" name="penerbit" class="form-control" value="{{$data->penerbit}}" placeholder="Penerbit Buku" />
    </div>
    <div class="form-group">
     <input type="submit" class="btn btn-primary" value="Edit" />

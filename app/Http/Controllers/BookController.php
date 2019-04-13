@@ -71,7 +71,7 @@ class BookController extends Controller
      * @param  \App\Book  $book
      * @return \Illuminate\Http\Response
      */
-    public function edit(Book $book)
+    public function edit($id)
     {
         $data = Book::find($id);
         return view('data.edit', compact('data', 'id'));
@@ -94,7 +94,7 @@ class BookController extends Controller
           'penerbit'      =>  'required'
       ]);
 
-      $Book == Book::find($id);
+      $data = Book::find($id);
 
       $data->judul=$request->get('judul');
       $data->pengarang=$request->get('pengarang');

@@ -38,7 +38,6 @@
     <td>{{$row['penerbit']}}</td>
     <td><a href="{{action('BookController@edit', $row['id'])}}" class="btn btn-warning">Edit</a></td>
     <td><a href="{{action('BookController@destroy', $row['id'])}}" class="btn btn-warning">Delete</a></td>
-    <td></td>
    </tr>
    @endforeach
   </table>
