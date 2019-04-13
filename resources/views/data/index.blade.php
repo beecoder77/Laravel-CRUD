@@ -1,0 +1,48 @@
+@extends('master')
+
+@section('content')
+
+<div class="row">
+ <div class="col-md-12">
+  <br />
+  <h3 align="center">Data Buku</h3>
+  <br />
+  @if($message = Session::get('success'))
+  <div class="alert alert-success">
+   <p>{{$message}}</p>
+  </div>
+  @endif
+  <div align="right">
+   <a href="{{route('data.create')}}" class="btn btn-primary">Add</a>
+   <br />
+   <br />
+  </div>
+  <table class="table table-bordered table-striped">
+   <tr>
+    <th>ID</th>
+    <th>Judul</th>
+    <th>Pengarang</th>
+    <th>Kategori</th>
+    <th>Tahun Terbit</th>
+    <th>Penerbit</th>
+    <th>Edit</th>
+    <th>Delete</th>
+   </tr>
+   @foreach($data as $row)
+   <tr>
+    <td>{{$row['id']}}</td>
+    <td>{{$row['judul']}}</td>
+    <td>{{$row['pengarang']}}</td>
+    <td>{{$row['kategori']}}</td>
+    <td>{{$row['tahunTerbit']}}</td>
+    <td>{{$row['penerbit']}}</td>
+    <td><a href="{{action('BookController@edit', $row['id'])}}" class="btn btn-warning">Edit</a></td>
+    <td><a href="{{action('BookController@destroy', $row['id'])}}" class="btn btn-warning">Delete</a></td>
+    <td></td>
+   </tr>
+   @endforeach
+  </table>
+ </div>
+</div>
+
+@endsection
