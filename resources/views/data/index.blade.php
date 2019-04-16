@@ -37,7 +37,13 @@
     <td>{{$row['tahunTerbit']}}</td>
     <td>{{$row['penerbit']}}</td>
     <td><a href="{{action('BookController@edit', $row['id'])}}" class="btn btn-warning">Edit</a></td>
-    <td><a href="{{action('BookController@destroy', $row['id'])}}" class="btn btn-warning">Delete</a></td>
+    <td>
+      <form action="{{route('data.destroy', $row['id'])}}" method="post">
+        @csrf
+        @method('DELETE')
+        <button type="submit" name="button">Delete</button>
+      </form>
+    </td>
    </tr>
    @endforeach
   </table>
